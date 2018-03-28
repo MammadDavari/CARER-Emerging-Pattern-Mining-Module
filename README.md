@@ -9,30 +9,30 @@ Complex Activity Recognition using Emerging patterns and Random forest
 		from the Dataset
 	
 2. How to config
-	* There is a confgi file called "configuration.xml"
+	* There is a confif file called "configuration.xml"
 	* In the Configuration file all the tags within "DataSet" node belongs to the configuration of the dataset
 	* All activity labels should be under the "Activity_Label" node, otherwise the activity label would 
 		be ?????? in the preprocessing phase
 	* "Event_Format_Regex" is a regular expression that matches the event lines in the dataset and groups 
 		them such that:
-		   i. first group specifies the year within which the event happened
-		  ii. second group specifies the month within which the event happened
-		 iii. third group specifies the day within which the event happened
-		  iv. forth group specifies the hour within which the event happened
-		   v. fifth group specifies the minute within which the event happened
-		  vi. sixth group specifies the second within which the event happened
-		 vii. seventh group specifies the millisecond within which the event happened
-		viii. eighth group specifies the sensor name of the event
-		  ix. ninth group specifies the value that the sensor read
-		   x. eighth group specifies the Activity Label if exists
+		   i. first group specifies the YEAR within which the event happened
+		  ii. second group specifies the MONTH within which the event happened
+		 iii. third group specifies the DAY within which the event happened
+		  iv. forth group specifies the HOUR within which the event happened
+		   v. fifth group specifies the MINUTE within which the event happened
+		  vi. sixth group specifies the SECOND within which the event happened
+		 vii. seventh group specifies the MILLISECOND within which the event happened
+		viii. eighth group specifies the SENSOR NAME of the event
+		  ix. ninth group specifies the VALUE that the sensor read
+		   x. eighth group specifies the ACTIVITY LABEL if exists
 		   
 	* Set your desired directories if necessary
 	* Set minimum support and minimum discriminative power of your choice
 	
 3. How to run
-	* create a new project in your desired IDE and move the "src" folder containments to the src folder of 
-		your project. Add "data" folder and "configuration.xml" file to your project's root, too.
-	* there are 3 runnable .java files in the tests package
+	* create a new project in your desired IDE and move the "src" folder content into the src folder of 
+		your project. Add "data" folder and "configuration.xml" file to your project's root, as well.
+	* there are 3 runnable .java files in the tests package that you can run
 	* you should run stages in order specified by the "stage#" prefix. If you want to run a stage separately 
 		make sure that there exists necessary files for that stage in advance
 	
@@ -43,12 +43,12 @@ Complex Activity Recognition using Emerging patterns and Random forest
 	* frequent patterns: the frequent patterns for each activity
 	* emerging patterns: the emerging patterns for each activity
 	* SPMFCodeMap file: SMPF toolset does accept as input only numbers as the elements of the sequences. 
-		So the sensor+state of the events are mapped to an integer number. You can find the mappings between 
+		So the SENSOR+STATE of the events are mapped to an integer NUMBER. You can find the mappings between 
 		sensor+state and integer values in this file
 	
 5. Notes
 	* the frequent pattern mining may take several HOURS
-	* long sequences in the "simple separate SPMF-format files" causes the time cost of the frequent pattern miner 
-		algorithm to grow exponentially
-	* if frequent pattern mining stage takes unexpectedly long times, i suggest you to remove some longer sequences 
+	* long sequences in the "simple separate SPMF-format files" -generated after the dataset preprocessing 
+		stage- causes the time cost of the frequent pattern miner algorithm to grow exponentially
+	* if frequent pattern mining stage takes unexpectedly long times, I suggest you to remove some longer sequences 
 		selectively in exchange to the overall accuracy
