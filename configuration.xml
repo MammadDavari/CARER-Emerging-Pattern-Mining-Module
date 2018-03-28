@@ -1,0 +1,53 @@
+<configuration>
+    <DataSet>
+        <DataSet_File>data\train\ann.txt</DataSet_File>
+        <Simple_Pruned_Output_DataSet_File>data\train\pruned.txt</Simple_Pruned_Output_DataSet_File>
+        <Simple_Seperate_SPMFFormat_Dataset_Dir>data\SPMF\</Simple_Seperate_SPMFFormat_Dataset_Dir>
+        <SPMF_Code_Map_File>data\SPMFCodeMap.txt</SPMF_Code_Map_File>
+        <Event_Format_Regex>^(20\d{2})-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])\t([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])\.(\d+)(\s\S+)?(\s\S+)?(\s\S+)?(\s\S+)?</Event_Format_Regex>
+        <Activity_Labels>
+            <Label>Work_On_Computer</Label>
+            <Label>Personal_Hygiene</Label>
+            <Label>Sleep</Label>
+            <Label>Toilet</Label>
+            <Label>Morning_Meds</Label>
+            <Label>Evening_Meds</Label>
+            <Label>Eat_Breakfast</Label>
+            <Label>Eat_Lunch</Label>
+            <Label>Eat_Dinner</Label>
+            <Label>Eat</Label>
+            <Label>Groom</Label>
+            <Label>Cook</Label>
+            <Label>Cook_Breakfast</Label>
+            <Label>Cook_Dinner</Label>
+            <Label>Cook_Lunch</Label>
+            <Label>Watch_TV</Label>
+            <Label>Wash_Breakfast_Dishes</Label>
+            <Label>Wash_Dinner_Dishes</Label>
+            <Label>Wash_Dishes</Label>
+            <Label>Phone</Label>
+            <Label>Work</Label>
+            <Label>Bed_Toilet_Transition</Label>
+            <Label>Dress</Label>
+            <Label>Relax</Label>
+            <Label>Leave_Home</Label>
+            <Label>Enter_Home</Label>
+            <Label>Work_At_Table</Label>
+            <Label>Bathe</Label>
+            <Label>Take_Medicine</Label>
+            <Label>Entertain_Guests</Label>
+            <Label>Sleep_Out_Of_Bed</Label>
+            <Label>Wash_Lunch_Dishes</Label>
+        </Activity_Labels>
+    </DataSet>
+    <Mining>
+        <Minimum_Support>0.98</Minimum_Support>
+        <Frequent_Patterns_Dir>data\Frequent Patterns\</Frequent_Patterns_Dir>
+        <Emerging_Patterns_Dir>data\Emerging Patterns\</Emerging_Patterns_Dir>
+        <Keep_Patterns>true</Keep_Patterns>
+        <Verbose>false</Verbose>
+        <Find_Closed_Patterns>true</Find_Closed_Patterns>
+        <Execute_Pruning_Methods>true</Execute_Pruning_Methods>
+        <Minimum_Discriminative_Power>0.9</Minimum_Discriminative_Power>
+    </Mining>
+</configuration>
