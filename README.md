@@ -1,5 +1,6 @@
 # CARER-Emerging Pattern Mining Module
-Complex Activity Recognition using Emerging patterns and Random forest
+![alt text](https://github.com/MammadDavari/CARER-Emerging-Pattern-Mining-Module/blob/master/EmergingPatternsMiningModule.png)
+
 
 1. Preliminaries
 	* the SPMF toolset is used for the Frequent sequence mining stage. FMI: http://www.philippe-fournier-viger.com/spmf/
