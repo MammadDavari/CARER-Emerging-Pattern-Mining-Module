@@ -781,19 +781,32 @@ public class DataSet {
         return activityFiles_SPMF;
     }
 
-    public void getProbabilities() {
-        double conditionalProbabilitiesD[][] = new double[numberOfActivityInstances.length][numberOfActivityInstances.length];
-        for (int i = 0; i < numberOfActivityInstances.length; i++) {
-            //System.out.print(activityLabels[i]);
-            for (int j = 0; j < numberOfActivityInstances.length; j++) {
-                conditionalProbabilitiesD[i][j] = ((double) conditionalProbabilities[i][j]) / numberOfActivityInstances[i];
-                if (conditionalProbabilitiesD[i][j] == Double.NaN)
-                    conditionalProbabilitiesD[i][j] = 0;
-                System.out.print(String.format("%.2f", conditionalProbabilitiesD[i][j]) + "\t");
+    public double[][] getPriorActivityProbabilities() {
+        int maxStringLength = 0;
+        for(String l:activityLabels)
+            if(l.length() > maxStringLength)
+                maxStringLength = l.length();
+        for(int i = 0; i < maxStringLength; i++) {
+            System.out.print(String.format("%-25s", ""));
+            for (String l : activityLabels) {
+                if (l.length() > i)
+                    System.out.print(String.format(" %-4s ", l.charAt(i)));
+                else
+                    System.out.print(String.format(" %-4s ", " "));
             }
             System.out.println();
         }
-
-
+        double priorActivityProbabilities[][] = new double[numberOfActivityInstances.length][numberOfActivityInstances.length];
+        for (int i = 0; i < numberOfActivityInstances.length; i++) {
+            System.out.print(String.format("%-25s", activityLabels[i]));
+            for (int j = 0; j < numberOfActivityInstances.length; j++) {
+                priorActivityProbabilities[i][j] = ((double) conditionalProbabilities[i][j]) / numberOfActivityInstances[i];
+                if (Double.isNaN(priorActivityProbabilities[i][j]))
+                    priorActivityProbabilities[i][j] = 0;
+                System.out.print(String.format(" %.2f ", priorActivityProbabilities[i][j]));
+            }
+            System.out.println();
+        }
+        return priorActivityProbabilities;
     }
 }
