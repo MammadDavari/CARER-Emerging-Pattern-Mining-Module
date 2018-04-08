@@ -10,7 +10,7 @@
 		from the Dataset
 	
 2. How to config
-	* There is a confif file called "configuration.xml"
+	* There is a config file called "configuration.xml"
 	* In the Configuration file all the tags within "DataSet" node belongs to the configuration of the dataset
 	* All activity labels should be under the "Activity_Label" node, otherwise the activity label would 
 		be ?????? in the preprocessing phase
